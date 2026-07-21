@@ -1,0 +1,5 @@
+Terminal = "kitty"
+FileManager = "dolphin"
+Browser = "zen-browser"
+Menu = "walker"
+Discord = "discord --enable-features=UseOzonePlatform --ozone-platofm=wayland --start-minimized"
