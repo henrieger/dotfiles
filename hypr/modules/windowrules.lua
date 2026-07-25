@@ -69,10 +69,11 @@ hl.window_rule({
 	name = "thunderbird-writing-floating",
 	match = {
 		class = "org.mozilla.Thunderbird",
-		title = "^Escrever",
+		title = "^Escrever: .*",
 	},
 
 	float = true,
+	size = "1280 720",
 })
 
 hl.window_rule({
