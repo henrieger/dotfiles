@@ -10,6 +10,7 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(FileManager))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(Browser))
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(Discord))
 hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("obsidian"))
+hl.bind(mainMod .. " + Z", hl.dsp.exec_cmd(WhatsApp))
 hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 
 -- Kill the current hyprland session
