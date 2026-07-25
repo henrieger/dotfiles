@@ -1,0 +1,20 @@
+[Unit]
+Description=Vane AI Search Engine
+After=searxng.service
+Requires=searxng.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash -c \
+	"docker run -d -p 3030:3000 --rm \
+	-e SEARXNG_API_URL=http://host.docker.internal:4000 \
+	-v perplexica-data:/home/vane/data \
+	-v perplexica-uploads:/home/vane/uploads \
+	--add-host=host.docker.internal:host-gateway \
+	--name vane \
+	itzcrazykns1337/vane:slim-latest"
+ExecStop=/bin/bash -c "docker stop perplexica"
+
+[Install]
+WantedBy=graphical-session.target

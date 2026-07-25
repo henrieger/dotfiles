@@ -1,5 +1,12 @@
 *
+
+# Include Hyprland config files
 !hypr/
 !hypr/*
 !hypr/modules/
 !hypr/modules/*.lua
+
+# Include systemd user-defined services
+!systemd/
+!systemd/user/
+!systemd/user/*.service

@@ -1,0 +1,17 @@
+[Unit]
+Description=NetworkManager Waybar Applet
+Requires=waybar.service
+After=waybar.service
+
+[Service]
+Type=simple
+User=henrieger
+Group=henrieger
+ExecStart=/bin/bash -c "nm-applet --indicator"
+Restart=on-failure
+KillMode=process
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical-session.target

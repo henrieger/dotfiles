@@ -1,0 +1,16 @@
+[Unit]
+Description=SearXNG
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/bash -c "docker run --rm --name searxng -d \
+    -p 4000:8080 \
+    -v /etc/searxng/:/etc/searxng/ \
+    -v /var/cache/searxng/:/var/cache/searxng/ \
+    docker.io/searxng/searxng:latest"
+ExecStop=/bin/bash -c "docker stop searxng"
+
+[Install]
+WantedBy=graphical-session.target

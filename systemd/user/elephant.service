@@ -1,0 +1,15 @@
+[Unit]
+Description=Elephant Menu Helper
+
+[Service]
+Type=simple
+User=henrieger
+Group=henrieger
+ExecStart=/bin/bash -c "elephant --debug"
+Restart=on-failure
+RestartSec=5s
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical-session.target

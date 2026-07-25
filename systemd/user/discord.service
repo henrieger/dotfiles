@@ -1,0 +1,15 @@
+[Unit]
+Description=Discord
+
+[Service]
+Type=simple
+User=henrieger
+Group=henrieger
+ExecStart=/bin/bash -c "discord --enable-features=UseOzonePlatform --ozone-platofm=wayland --start-minimized"
+Restart=on-failure
+KillMode=process
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical-session.target

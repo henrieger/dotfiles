@@ -1,0 +1,17 @@
+[Unit]
+Description=Multi-Purpose Launcher with a lot of features. Highly Customizable and fast. 
+Requires=elephant.service
+After=elephant.service
+
+[Service]
+Type=simple
+User=henrieger
+Group=henrieger
+ExecStart=/bin/bash -c "walker --gapplication-service"
+Restart=on-failure
+KillMode=process
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical-session.target

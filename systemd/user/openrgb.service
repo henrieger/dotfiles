@@ -1,0 +1,15 @@
+[Unit]
+Description=OpenRGB
+
+[Service]
+Type=simple
+User=henrieger
+Group=henrieger
+ExecStart=/bin/bash -c "/home/henrieger/openrgb/OpenRGB-x86_64.AppImage --startminimized --profile nucleo"
+Restart=on-failure
+KillMode=process
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target

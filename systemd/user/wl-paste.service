@@ -1,0 +1,15 @@
+[Unit]
+Description=wl-paste configs
+
+[Service]
+Type=simple
+User=henrieger
+Group=henrieger
+ExecStart=/bin/bash -c "wl-paste --type text --watch cliphist store && wl-paste --type text --watch cliphist store"
+Restart=on-failure
+KillMode=process
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical-session.target
