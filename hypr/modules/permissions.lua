@@ -17,3 +17,10 @@ hl.permission({
 	type = "screencopy",
 	mode = "allow",
 })
+
+-- hyprlock screencopy
+hl.permission({
+	binary = "/usr/bin/hyprlock",
+	type = "screencopy",
+	mode = "allow",
+})
